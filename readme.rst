@@ -16,9 +16,9 @@ What's in the box?
 This is work in progress, but here's where we'd like to get to.
 
 - A bare-bones app.yaml configuration
-- A WSGI app that connects djago to AppEngine, and helps route logging
+- A WSGI app that connects django to AppEngine, and helps route logging
 - Django settings
-- A caching backend, as AppEngine's memcache is not quite what django espects
+- A caching backend, as AppEngine's memcache is not quite what django expects
 - A session engine, which uses the caching backend, and writes through to the
   datastore
 
