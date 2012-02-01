@@ -1,0 +1,7 @@
+*.pyc
+.gitignore
+*~
+.DS_Store
+*#
+.*
+/MANIFEST
