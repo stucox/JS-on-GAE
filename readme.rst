@@ -21,6 +21,7 @@ This is work in progress, but here's where we'd like to get to.
 - A caching backend, as AppEngine's memcache is not quite what django expects
 - A session engine, which uses the caching backend, and writes through to the
   datastore
+- A django manage.py
 
 .. _`django non-rel`: http://www.allbuttonspressed.com/projects/django-nonrel
 
