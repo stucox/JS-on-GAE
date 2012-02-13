@@ -13,10 +13,6 @@ inbound_services:
 
 handlers:
 
-#- url: /favicon.ico
-#  static_files: core/static/img/favicon.ico
-#  upload: core/static/img/favicon.ico
-
 - url: /static
   static_dir: core/static
   expiration: '1m'
