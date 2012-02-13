@@ -1,0 +1,25 @@
+application: testapp
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+libraries:
+- name: django
+  version: "1.2"
+
+inbound_services:
+- warmup
+
+handlers:
+
+#- url: /favicon.ico
+#  static_files: core/static/img/favicon.ico
+#  upload: core/static/img/favicon.ico
+
+- url: /static
+  static_dir: core/static
+  expiration: '1m'
+
+- url: /.*
+  script: main.app

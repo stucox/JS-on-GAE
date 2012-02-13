@@ -9,6 +9,7 @@ if 'runserver' in sys.argv:
     sys.exit(1)
 
 # Add appengine's django1.2 to top of the path
+# todo, don't use `which` here, find a cross-platform way
 process = subprocess.Popen('readlink `which dev_appserver.py`', shell=True, stdout=subprocess.PIPE)
 path = os.path.abspath(os.path.dirname(os.path.realpath(process.stdout.read())))
 django_1_2 = os.path.join(path, 'lib', 'django_1_2')
