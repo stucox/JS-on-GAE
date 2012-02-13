@@ -1,8 +1,5 @@
 import os
 import sys
-import re
-import logging
-from urllib import urlencode
 
 HTTP_HOST = os.environ.get('HTTP_HOST')
 

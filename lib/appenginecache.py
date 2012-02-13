@@ -4,7 +4,7 @@
 # http://code.google.com/appengine/docs/python/memcache/overview.html
 
 from django.core.cache.backends.base import BaseCache
-from django.utils.encoding import smart_unicode, smart_str
+from django.utils.encoding import smart_str
 from google.appengine.api import memcache
 
 

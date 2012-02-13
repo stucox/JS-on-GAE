@@ -1,6 +1,3 @@
-import base64
-import cPickle as pickle
-
 from google.appengine.ext import db
 
 

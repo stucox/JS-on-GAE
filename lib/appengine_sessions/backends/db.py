@@ -6,20 +6,14 @@ Basically a reworking of django.contrib.sessions.backends.db, so have
 a look there for definitive docs.
 """
 
-import os
-import time
 import datetime
-import logging
-import random
 
 from google.appengine.ext import db
 
-from django.conf import settings
-from django.contrib.sessions.backends.base import SessionBase, CreateError
+from django.contrib.sessions.backends.base import  CreateError
 from django.contrib.sessions.backends.db import SessionStore as DBStore
 from django.core.exceptions import SuspiciousOperation
 from django.utils.encoding import force_unicode
-from django.utils.hashcompat import md5_constructor
 
 
 class SessionStore(DBStore):

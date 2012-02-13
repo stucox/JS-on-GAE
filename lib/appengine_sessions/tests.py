@@ -1,8 +1,6 @@
 import base64
 from datetime import datetime, timedelta
 import pickle
-import shutil
-import tempfile
 import unittest
 
 from google.appengine.ext import testbed
@@ -12,9 +10,7 @@ from appengine_sessions.backends.cached_db import SessionStore as CacheDBSession
 from appengine_sessions.models import Session
 from appengine_sessions.middleware import SessionMiddleware
 from django.conf import settings
-from django.core.exceptions import ImproperlyConfigured, SuspiciousOperation
 from django.http import HttpResponse
-from django.test import TestCase
 from django.utils.hashcompat import md5_constructor
 
 

@@ -2,8 +2,6 @@ import os
 import sys
 import django
 import logging
-import google
-
 
 """
 for key, value in os.environ.iteritems():
