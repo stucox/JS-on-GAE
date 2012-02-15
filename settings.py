@@ -14,6 +14,35 @@ DJANGO_DEBUG = os.environ.get('DJANGO_DEBUG', '1')
 DEBUG = bool(int(DJANGO_DEBUG))
 TEMPLATE_DEBUG = DEBUG
 
+# Uncomment these DB definitions to use Cloud SQL.
+# MySQL is used locally for development. This is not a requirement, you can also connect to Cloud SQL in your
+# development environment, whether that be the production instance or a development instance.
+# See https://developers.google.com/cloud-sql/docs/django#development-settings
+"""
+# CLoud SQL with local mysql substitue for dev
+if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
+    os.getenv('SETTINGS_MODE') == 'prod'):
+    # Running on production App Engine, so use a Google Cloud SQL database.
+    DATABASES = {
+        'default': {
+            'ENGINE': 'google.appengine.ext.django.backends.rdbms',
+            'INSTANCE': 'my_project:instance1',
+            'NAME': 'my_db',
+        }
+    }
+else:
+    # Running in development, so use a local MySQL database.
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': 'localhost',
+            'NAME': '',
+        }
+    }
+"""
+
 # A custom cache backend using AppEngine's memcached
 CACHE_BACKEND = "appenginecache://127.0.0.1:11211/?timeout=60"
 
