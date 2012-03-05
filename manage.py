@@ -16,7 +16,7 @@ path = os.path.abspath(os.path.dirname(os.path.realpath(process.stdout.read())))
 extra_paths = [
   path,
   # make sure django is first in case there are other django's on the system
-  os.path.join(path, 'lib', 'django_1_1'),
+  os.path.join(path, 'lib', 'django_1_3'),
   os.path.join(path, 'lib', 'antlr3'),
   os.path.join(path, 'lib', 'fancy_urllib'),
   os.path.join(path, 'lib', 'ipaddr'),
