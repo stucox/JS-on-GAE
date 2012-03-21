@@ -3,16 +3,15 @@
 # todo: investigate `compare and set` and loadtest appropriately, see:
 # http://code.google.com/appengine/docs/python/memcache/overview.html
 
-from django.core.cache.backends.base import BaseCache
+from django.core.cache.backends.base import BaseCache, InvalidCacheBackendError
 from django.utils.encoding import smart_str
 from google.appengine.api import memcache
 
 
 class CacheClass(BaseCache):
 
-
-    def __init__(self, *args, **kwargs):
-        pass
+    def __init__(self, server, params):
+        super(CacheClass, self).__init__(params)
 
 
     def add(self, key, value, timeout=0):
@@ -58,3 +57,4 @@ class CacheClass(BaseCache):
 
     def clear(self):
         memcache.flush_all()
+

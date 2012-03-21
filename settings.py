@@ -45,7 +45,11 @@ else:
 """
 
 # A custom cache backend using AppEngine's memcached
-CACHE_BACKEND = "appenginecache://127.0.0.1:11211/?timeout=60"
+CACHES = {
+    'default': {
+        'BACKEND': 'appenginecache.CacheClass',
+        }
+}
 
 # Custom session engine using our cache or writing through to the datastore
 # If using SQL, can we use django's standard write through?
