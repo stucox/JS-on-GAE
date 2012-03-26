@@ -53,6 +53,8 @@ CACHES = {
 
 # Custom session engine using our cache or writing through to the datastore
 # If using SQL, can we use django's standard write through?
+# If gae memecached is stable enough, it would be faster to use:
+# django.contrib.sessions.backends.cache
 SESSION_ENGINE = "appengine_sessions.backends.cached_db"
 
 ADMINS = (
