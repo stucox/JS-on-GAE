@@ -1,7 +1,7 @@
 djappengine 
 ===========
 
-A streamlined django setup for appengine.
+A streamlined django 1.3.1 setup for appengine.
 
 Rather than using `django non-rel`_, this approach uses the `django 1.3
 third-party library`_ available for the 2.7 runtime. You might prefer it if
@@ -14,7 +14,7 @@ and baggage to a minimum.
 What's in the box?
 ------------------
 
-This is work in progress, but here's where we'd like to get to.
+Please note that this is *work in progress* and better documentation is on the way.
 
 - A bare-bones app.yaml configuration
 - A WSGI app that connects django to AppEngine, and helps route logging
