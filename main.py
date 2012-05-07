@@ -9,7 +9,8 @@ import django.core.signals
 import django.dispatch
 import django.db
 
-sys.path.extend(['lib'])
+if not 'lib' in sys.path:
+    sys.path.append('lib')
 
 PRODUCTION =\
     os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or\
