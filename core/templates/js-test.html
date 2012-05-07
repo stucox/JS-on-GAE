@@ -13,11 +13,11 @@
 	<h1>JS on GAE</h1>
 	<p>This is a quick demo of Javascript code being shared between server and client, using <a href="//code.google.com/p/pyjon/">pyjon</a> to evaluate Javascript in a Python environment with Django on Google App Engine.</p>
 	<p>Enter some numbers then click the relevant button to either evaluate it on the server or in your browser. The adding function is only defined once, in <a href="/static/shared-functions.js">shared-functions.js</a>, which is read and evaluated by the server, as well as being served to the browser.</p>
-	<p>Obviously this is massive overkill for adding two numbers(!), but the concept could be applied to more complex calculations, operations on objects, etc, such that the logic only needs to be defined once.</p>
+	<p>Obviously this is massive overkill for adding two numbers(!), but the concept could be applied to more complex calculations, operations on objects, etc, such that common logic only needs to be defined once.</p>
 	<form method="GET" action="">
 		{{form.errors}}
 		{% for field in form %}
-			<label>{{field.label}}:<input type="number" name="{{field.name}}" value="{{field.value}}" id="field_{{field.name}}" required="required" step="0.1" /></label>
+			<label>{{field.label}}:<input type="number" name="{{field.name}}" value="{{field.value}}" id="field_{{field.name}}" required="required" step="1" /></label>
 		{% endfor %}
 		Evaluate on:
 		<input type="submit" id="submit_server" name="submit" value="server" />

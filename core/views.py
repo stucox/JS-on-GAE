@@ -9,25 +9,30 @@ from set_trace import set_trace
 from lib.pyjon import interpr
 
 class AddForm(forms.Form):
-    a = forms.FloatField(initial=1, label=u'A')
-    b = forms.FloatField(initial=2, label=u'B')
+    a = forms.IntegerField(initial=1, label=u'A')
+    b = forms.IntegerField(initial=2, label=u'B')
 
 
 class JSTest(TemplateView):
     template_name = "js-test.html"
        
     def dispatch(self, request, *args, **kwargs):
-        self.form = AddForm(request.GET)
 
         with open('core/shared-functions.js') as f:
             js_funcs = f.read()
 
-        if request.GET.get('submit') == 'server' and self.form.is_valid():
-            js_code = js_funcs + 'var result = add(%s, %s)' % \
-                    (self.form.cleaned_data.get('a'),
-                            self.form.cleaned_data.get('b'))
-            self.js_context = interpr.PyJS()
-            self.js_context.eval_(js_code)
+        if request.GET.get('submit') == 'server':
+            self.form = AddForm(request.GET)
+
+            if self.form.is_valid():    
+                js_code = js_funcs + 'var result = add(%s, %s)' % \
+                        (self.form.cleaned_data.get('a'),
+                                self.form.cleaned_data.get('b'))
+                self.js_context = interpr.PyJS()
+                self.js_context.eval_(js_code)
+
+        else:
+            self.form = AddForm()
 
         return super(JSTest, self).dispatch(request, *args, **kwargs)
     
