@@ -18,13 +18,13 @@
 	<form method="GET" action="/">
 		{{form.errors}}
 		{% for field in form %}
-			<label>{{field.label}}:<input type="number" name="{{field.name}}" value="{{field.value}}" id="field_{{field.name}}" required="required" step="1" /></label>
+			<label>{{field.label}}: <input type="number" name="{{field.name}}" value="{{field.value}}" id="field_{{field.name}}" required="required" step="1" /></label>
 		{% endfor %}
 		Evaluate on:
 		<input type="submit" id="submit_server" name="submit" value="server" />
 		<input type="button" id="submit_browser" name="submit" value="browser" />
 	</form>
-	<label>A + B:<input type="text" id="result" readonly="readonly" value="{{result}}" /></label>
+	<label>A + B = <input type="text" id="result" readonly="readonly" value="{{result}}" /></label>
 
 	<script src="/static/shared-functions.js"></script>
 	<script>

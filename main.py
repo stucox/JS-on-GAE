@@ -10,7 +10,7 @@ import django.dispatch
 import django.db
 
 if not 'lib' in sys.path:
-    sys.path.append('lib')
+    sys.path.insert(0, 'lib')
 
 PRODUCTION =\
     os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or\
